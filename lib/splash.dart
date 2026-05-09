@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFDF5E6), // Parchment background
+      backgroundColor: AppTheme.parchment, // Uses centralized theme
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 48.0),
@@ -25,11 +25,11 @@ class SplashScreen extends StatelessWidget {
                 'HYMNS OF PRAISE',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'serif', // Classic book font
+                  fontFamily: AppTheme.font,
                   fontSize: 42.0,
                   fontWeight: FontWeight.w900,
-                  letterSpacing: 2.0, // Spaced out like old letterpress
-                  color: Color(0xFF4A3728), // Leather Brown
+                  letterSpacing: 2.0,
+                  color: AppTheme.leather,
                 ),
               ),
 
@@ -41,9 +41,7 @@ class SplashScreen extends StatelessWidget {
                   child: Image.asset(
                     'assets/images/choir.png',
                     fit: BoxFit.contain,
-                    // Pro-Tip: If your choir image is pure black/white, uncommenting
-                    // the two lines below will tint the image to match the dark ink!
-                    // color: const Color(0xFF2E211B),
+                    // color: AppTheme.ink,
                     // colorBlendMode: BlendMode.srcIn,
                   ),
                 ),
@@ -61,18 +59,18 @@ class SplashScreen extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF4A3728), // Leather Brown
-                  foregroundColor: const Color(0xFFFDF5E6), // Parchment text
+                  backgroundColor: AppTheme.leather,
+                  foregroundColor: AppTheme.parchment,
                   padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 16.0),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4.0), // Classic squared edges
+                    borderRadius: BorderRadius.circular(4.0),
                   ),
-                  elevation: 3, // Subtle shadow mimicking a physical cover
+                  elevation: 3,
                 ),
                 child: const Text(
                   'Enter Hymnary',
                   style: TextStyle(
-                    fontFamily: 'serif',
+                    fontFamily: AppTheme.font,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.0,
@@ -91,10 +89,10 @@ class SplashScreen extends StatelessWidget {
                     'Compiled by: Dr. Manas Ranjan Patra',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'serif',
+                      fontFamily: AppTheme.font,
                       fontSize: 15.0,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF2E211B), // Dark Ink
+                      color: AppTheme.ink,
                     ),
                   ),
                   SizedBox(height: 8.0),
@@ -102,22 +100,22 @@ class SplashScreen extends StatelessWidget {
                     'Donated to Oriya Baptist Church,\nChurch of North India Berhampur - 760005.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'serif',
+                      fontFamily: AppTheme.font,
                       fontSize: 13.0,
-                      color: Color(0xFF4A3728), // Slightly lighter than ink
+                      color: AppTheme.leather,
                       fontStyle: FontStyle.italic,
                       height: 1.5,
                     ),
                   ),
-                  SizedBox(height: 8.0), // Space before developer credit
+                  SizedBox(height: 8.0),
                   Text(
                     'Developed by: Obed Yameogo',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'serif',
+                      fontFamily: AppTheme.font,
                       fontSize: 12.0,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF2E211B), //// Faded vintage ink color
+                      color: AppTheme.ink,
                     ),
                   ),
                 ],
